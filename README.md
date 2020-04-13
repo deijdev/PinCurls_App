@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# PinCurls_App
+Ruby on Rails Project (Natural Hair Care Pinterest)
+>>>>>>> 8e6fdc61308cecd4fcfae655e7e99f6276836294
