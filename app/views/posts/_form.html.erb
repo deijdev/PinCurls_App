@@ -4,6 +4,20 @@
 </br>
 <%=f.label :content, "Content"%></br>
 <%=f.text_area :content%></br>
+
+<%#=f.collection_select :tag_id, Tag.all,  :id, :name %>
+
+<h5>Add A Hashtag: </h5>
+<ul>
+  <% @tags.each do |tag| %>
+      <li>
+        <%= check_box_tag 'post[tag_ids][]', tag.id -%>
+        <%= h tag.name -%>
+      </li>
+  <% end %>
+</ul>
+
+
 <%=f.submit%>
 
 <%end%>

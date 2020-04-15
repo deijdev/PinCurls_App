@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
     def new 
         @post = Post.new
+        @tags = Tag.all  
     end
 
     def create 
@@ -20,13 +21,16 @@ class PostsController < ApplicationController
         else
             render :new
         end
+       
     end
 
     def edit 
+        @tags = Tag.all
     end
 
     def update 
         if @post.update(post_params)
+
             redirect_to post_path(@post)
         else 
             render :edit
@@ -45,8 +49,8 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
-    def post_params
-        params.require(:post).permit(:title, :content)
+    def post_params  
+        params.require(:post).permit(:title, :content, :tag_ids => [])
     end
 
 end

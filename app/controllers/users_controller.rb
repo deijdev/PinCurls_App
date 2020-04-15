@@ -8,14 +8,11 @@ class UsersController < ApplicationController
    end
 
    def create
-  
-    
     @user = User.new(user_params)
-  
 
         if @user.valid?
             @user.save
-            redirect_to '/'
+            redirect_to '/homepage'
         else
             render :new
         end
