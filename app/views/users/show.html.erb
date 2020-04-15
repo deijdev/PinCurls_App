@@ -1,0 +1,14 @@
+
+<h3>Name: <%= @user.name %> </h3>
+<h3>Username: <%= @user.username %> </h3>
+
+<h2>My Favorite Posts: </h2>
+
+<ul>
+ <% @user.favorites.each do |f| %>
+    <li><%=link_to f.post.title, post_path(f.post)%></li>
+    <%end%>
+</ul>
+
+ <%=link_to "Back", '/'%>
+

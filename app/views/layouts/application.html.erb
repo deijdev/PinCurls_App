@@ -10,19 +10,26 @@
   </head>
 
   <body>
-  <%=link_to "All Posts", posts_path%> | <%=link_to "Create A Post", new_post_path%> |  
-  
+  <%=link_to "Home", '/' %> | <%=link_to "Create A Post", new_post_path%> 
+  <hr>
     <% if session[:user_id].nil? %>
       <%= link_to "Login", login_path%>
       
-    <%else%> 
-      <h3>Logged In: <%= current_user.username %></h3>
+    <%else%>
+      <h4>Logged In: <%= current_user.username %></h4>
+      <h4><%=link_to "My Profile", user_path(current_user.id)%></h4>
     <%end%>
 
+     
     <h1>PinCurls</h1>
-  
+    <hr>
   
     <%= yield %>
-    <%=link_to "Logout", logout_path%>
+    <hr>
+    <% if session[:user_id] %>
+    <%=link_to "Logout", logout_path%> 
+
+    <%end%>
+
   </body>
 </html>

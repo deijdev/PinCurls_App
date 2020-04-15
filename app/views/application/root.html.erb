@@ -1,0 +1,7 @@
+<h1>Welcome to PinCurls, the #1 leading site for all things natural hair care</h1>
+
+<ul>
+    <% @posts.each do |p| %>
+        <li><%= p.title %> |  <%= link_to "Learn More", post_path(p) %></li>
+    <% end %>
+</ul>

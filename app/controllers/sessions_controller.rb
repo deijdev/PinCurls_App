@@ -9,11 +9,12 @@ class SessionsController < ApplicationController
       # if the user exist then create a session id 
       if user 
          session[:user_id] = user.id
-         redirect_to  '/'
+         redirect_to  '/user_homepage' 
       else
          redirect_to "/login"
       end
    end
+
 
     def logout
       session.clear

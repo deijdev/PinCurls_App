@@ -1,0 +1,7 @@
+<h1> Posts Related to <%=@tag.name%> </h1>
+<%@tag.posts.each do |post|%>
+   <p> <%=link_to post.title, post_path(post)%></p>
+<%end%>
+</br>
+</br>
+<%=link_to "Back to Home", '/'%>

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   # resources :sessions
-  resources :users
+  resources :users, only: [:create, :show, :new]
   resources :favorites
   resources :post_tags
-  resources :tags
+  resources :tags, only: [:new, :show, :create]
   resources :posts
-  get '/',  to: "application#homepage"
+  get '/',  to: "posts#index"
+  get '/user_homepage', to: "users#user_homepage"
   get '/login', to: "sessions#login"
   post '/login', to: "sessions#process_login"
-  get 'logout', to: "sessions#logout"
+  get '/logout', to: "sessions#logout"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

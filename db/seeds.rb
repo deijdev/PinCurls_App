@@ -14,9 +14,14 @@ Post.destroy_all
 Tag.destroy_all
 PostTag.destroy_all
 User.destroy_all
+Favorite.destroy_all
 
 p1 = Post.create(title: "curl", content: "conditioning")
 p2 = Post.create(title: "hair", content: "conditioning")
+p3 = Post.create(title: "products", content: "shampoo")
+p4 = Post.create(title: "hair style", content: "a lot")
+p5 = Post.create(title: "natural", content: "beautiful")
+p6 = Post.create(title: "hair time", content: "5 minutes")
 
 
 t1 = Tag.create(name: "#curl")
@@ -38,5 +43,13 @@ pt7 = PostTag.create(post_id: p1.id, tag_id: t6.id)
 ann = User.create(name: "Ann", username:"ann1", password: "ann")
 chine = User.create(name: "Chine", username:"chine1", password:"chine")
 bob = User.create(name: "Bob", username: "bobbob", password: "badpassword")
+
+fp1= Favorite.create(user_id: ann.id , post_id: p2.id)
+fp2= Favorite.create(user_id: ann.id,post_id: p1.id)
+fp3= Favorite.create(user_id: chine.id , post_id: p3.id)
+fp4= Favorite.create(user_id: bob.id,post_id: p1.id)
+fp5= Favorite.create(user_id: chine.id,post_id: p5.id)
+fp6= Favorite.create(user_id: bob.id , post_id: p4.id)
+fp7= Favorite.create(user_id: bob.id,post_id: p6.id)
 
 # username Faker::UserName, 
