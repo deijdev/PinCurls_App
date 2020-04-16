@@ -18,7 +18,8 @@
 <% if @user.posts.count > 0 %>
     <h2>My Posts: </h2>
     <ul>
-        <% @user.posts.each do |p| %>
+      
+        <% current_user.posts.each do |p| %>
         <li><%=link_to p.title, post_path(p)%> <br>
             <%=image_tag p.img %>
         </li>
