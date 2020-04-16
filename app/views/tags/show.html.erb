@@ -1,6 +1,7 @@
 <h1> Posts Related to <%=@tag.name%> </h1>
 <%@tag.posts.each do |post|%>
    <p> <%=link_to post.title, post_path(post)%></p>
+   <p><%= image_tag post.img %></p>
 <%end%>
 </br>
 </br>

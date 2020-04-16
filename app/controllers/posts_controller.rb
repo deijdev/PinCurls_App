@@ -30,7 +30,6 @@ class PostsController < ApplicationController
 
     def update 
         if @post.update(post_params)
-
             redirect_to post_path(@post)
         else 
             render :edit
@@ -50,7 +49,7 @@ class PostsController < ApplicationController
     end
 
     def post_params  
-        params.require(:post).permit(:title, :content, :tag_ids => [])
+        params.require(:post).permit(:title, :content, :img, :tag_ids => [])
     end
 
 end

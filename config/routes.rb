@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :sessions
-  resources :users, only: [:create, :show, :new]
+  resources :users, only: [:create, :show, :new, :edit, :update]
   resources :favorites
   resources :post_tags
   resources :tags, only: [:new, :show, :create]

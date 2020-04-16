@@ -1,8 +1,13 @@
 <h1>Welcome, <%=current_user.name%></h1>
 
-<% @posts.each do |post|%>
-<p><%=link_to "#{post.title}", post_path(post)%></p>
-<%end%>
+<ul>
+    <% @posts.each do |post|%>
+
+        <li><%=link_to post.title, post_path(post)%></li>
+        <p><%=image_tag post.img%></p>
+
+    <%end%>
+</ul>
 
 
 

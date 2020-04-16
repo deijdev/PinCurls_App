@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 6) do
+ActiveRecord::Schema.define(version: 2020_04_16_144212) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 6) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "img", default: "https://res.cloudinary.com/drpyvuhac/image/upload/v1587049947/7cc572738e4520c7da35ed6fcc1ebaf7_free-cliparts-natural-hair-download-free-clip-art-free-clip-art-_500-750_mhzqmw.jpg" 
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 6) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "img", default: "https://res.cloudinary.com/drpyvuhac/image/upload/v1587049780/default_profile_photo_vo9xhs.png"
   end
 
 end

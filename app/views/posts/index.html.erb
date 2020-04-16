@@ -1,5 +1,10 @@
 <h1>All Posts</h1>
-<% @posts.each do |post|%>
-<p><%=link_to "#{post.title}", post_path(post)%></p>
-<%end%>
+<ul>
+    <% @posts.each do |post|%>
+        <li> <%= link_to post.title, post_path(post)%> 
+            <p><%=image_tag post.img%></p>
+        </li> 
+    <%end%>
+</ul>
+
 

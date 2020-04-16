@@ -2,13 +2,29 @@
 <h3>Name: <%= @user.name %> </h3>
 <h3>Username: <%= @user.username %> </h3>
 
+<%=image_tag @user.img%></br>
+<%= link_to "Edit Profile", edit_user_path%>
+
 <h2>My Favorite Posts: </h2>
 
-<ul>
+<ul></ul>
  <% @user.favorites.each do |f| %>
-    <li><%=link_to f.post.title, post_path(f.post)%></li>
+    <li><%=link_to f.post.title, post_path(f.post)%> <br>
+        <%=image_tag f.post.img %>
+    </li>
     <%end%>
 </ul>
+
+<% if @user.posts.count > 0 %>
+    <h2>My Posts: </h2>
+    <ul>
+        <% @user.posts.each do |p| %>
+        <li><%=link_to p.title, post_path(p)%> <br>
+            <%=image_tag p.img %>
+        </li>
+        <%end%>
+    </ul>
+<%end%>
 
  <%=link_to "Back", '/'%>
 
