@@ -1,5 +1,10 @@
 <h1>Login</h1>
 
+
+    <div class= "errors">
+        <%= flash["error"] %>
+    </div>
+
 <%=form_tag login_path do %>
     <%= label :username, "Username" %></br>
     <%= text_field_tag :username %></br>

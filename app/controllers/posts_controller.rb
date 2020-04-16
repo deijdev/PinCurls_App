@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-    before_action :find_post, only: [:show, :edit, :update, :destroy]
+    before_action :find_post, only: [:show, :edit, :update, :destroy] 
+
+    before_action :authorize, except: [:index, :show]
 
     def index
         @posts = Post.all
@@ -49,7 +51,7 @@ class PostsController < ApplicationController
     end
 
     def post_params  
-        params.require(:post).permit(:title, :content, :img, :tag_ids => [])
+        params.require(:post).permit(:title, :content, :user_id, :img, :tag_ids => [])
     end
 
 end

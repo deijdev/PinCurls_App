@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :find_user, only: [:show, :edit, :update]
+before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 
    def new 
@@ -21,8 +21,12 @@ before_action :find_user, only: [:show, :edit, :update]
 
         if @user.valid?
             @user.save
-            redirect_to '/'
+            if @user.save
+                flash[:notice] = "Account created successfully!"
+            end
+            redirect_to root_path
         else
+            flash["errors"] = "Oops, couldn't create account. Please make sure you are using a valid username and password and try again."
             render :new
         end
    end
@@ -38,6 +42,12 @@ before_action :find_user, only: [:show, :edit, :update]
         end
    end
 
+   def destroy
+    @user.destroy 
+    session.clear
+    redirect_to '/login'
+   end
+
    private
 
    def find_user
@@ -45,7 +55,7 @@ before_action :find_user, only: [:show, :edit, :update]
    end
 
    def user_params
-    params.require(:user).permit(:name, :username, :password, :img)
+    params.require(:user).permit(:name, :username, :password,:img)
    end
 
 

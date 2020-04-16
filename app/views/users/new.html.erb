@@ -1,6 +1,10 @@
 <h1>Sign Up</h1>
 
-<%= render partial: "/shared/errors", locals: {object: @user} %>
+<div class= "errors">
+    <%= flash["errors"] %> <br>
+    <%= render partial: "/shared/errors", locals: {object: @user} %>
+</div>
+
 <%= render "user_form" %>
 
 

@@ -15,7 +15,8 @@
     <%end%>
 </ul>
 
-<% if @user.posts.count > 0 %>
+
+<% if !current_user.posts.empty? %>
     <h2>My Posts: </h2>
     <ul>
       
@@ -26,6 +27,8 @@
         <%end%>
     </ul>
 <%end%>
+
+ <%=link_to "Delete Account", user_path(@user), :method => :delete%>
 
  <%=link_to "Back", '/'%>
 
