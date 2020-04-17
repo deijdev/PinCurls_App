@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       user = User.find_by(username: params[:username])
       # if the user exist then create a session id 
       if user && user.authenticate(params[:password]) 
-         #  { username => {password}}
          session[:user_id] = user.id
          redirect_to  '/user_homepage', notice: 'Successfully logged in!' 
       else

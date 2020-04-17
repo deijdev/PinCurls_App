@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all
+        @favorite = Favorite.new
     end
 
     def show 
@@ -12,11 +13,12 @@ class PostsController < ApplicationController
 
     def new 
         @post = Post.new
+        @favorite = Favorite.new
         @tags = Tag.all  
     end
 
     def create 
-        @post = Post.new(post_params)
+        @post = Post.new(post_params)----
         if @post.valid?
             @post.save 
             redirect_to post_path(@post)
