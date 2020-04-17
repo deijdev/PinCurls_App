@@ -7,11 +7,13 @@
     <% @posts.each do |post|%>
         <li> <%= link_to post.title, post_path(post)%> 
             <p><%=image_tag post.img%></p>
+             <%if current_user%>
             <p><%=form_for @favorite do |f|%>
                 <%=f.hidden_field :post_id, :value => post.id %>
                 <%=f.hidden_field :user_id, :value => current_user.id %> 
-            </p>
-            <%=f.submit "Pin"%> 
+                <%=f.submit "Pin"%> 
+                </p>
+            <%end%>
             <%end %> 
                
         </li> 
