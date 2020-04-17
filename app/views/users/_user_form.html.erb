@@ -1,19 +1,23 @@
+<div class="align">
 
+<div class="container">
+    <div class="jumbotron">
 
+        <%=form_for @user do |f|%>
+            <%=f.label :name%></br>
+            <%=f.text_field :name %></br>
 
+            <%=f.label :username%></br>
+            <%=f.text_field :username %></br>
 
-<%=form_for @user do |f|%>
-    <%=f.label :name%></br>
-    <%=f.text_field :name %></br>
+            <%=f.label :password%></br>
+            <%=f.password_field :password %></br>
 
-    <%=f.label :username%></br>
-    <%=f.text_field :username %></br>
-
-    <%=f.label :password%></br>
-    <%=f.password_field :password %></br>
-
-    <%=f.label :img, "Add Profile Pic" %></br>
-    <%=f.text_field :img %></br>
-    
-    <%=f.submit %>
-<% end %>
+            <%=f.label :img, "Add Profile Pic" %></br>
+            <%=f.text_field :img %></br>
+            
+            <%=f.submit %>
+        <% end %>
+    </div>
+</div>
+</div>

@@ -1,23 +1,29 @@
-<h1>Login</h1>
 
+<div class= "align">
 
-    <div class= "errors">
-        <%= flash["error"] %>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Login</h1>
+
+                <div class= "errors">
+                    <%= flash["error"] %>
+                </div>
+
+            <%=form_tag login_path do %>
+                <%= label :username, "Username" %></br>
+                <%= text_field_tag :username %></br>
+
+            
+                <%=label :password, "Password" %><br>
+                <%=password_field_tag :password %></br>
+                
+                <%=submit_tag "Login"%></br>
+            <% end %> </br>
+
+          
+            <a class="btn btn-primary" href= "/users/new" role="button">Sign Up</a>
+            
+        </div>
     </div>
-
-<%=form_tag login_path do %>
-    <%= label :username, "Username" %></br>
-    <%= text_field_tag :username %></br>
-
-  
-    <%=label :password, "Password" %><br>
-    <%=password_field_tag :password %></br>
     
-    <%=submit_tag "Login"%></br>
-<% end %> </br>
-
-<h2><%= link_to "Sign Up", new_user_path %> </h2>
-
-
-
-
+</div>

@@ -1,12 +1,18 @@
+<div class= "align">
+
 <h1>All Posts</h1>
  <div class = "alert">
      <%=flash["alert"]%>
  </div>
 
-<ul>
+
+
+
     <% @posts.each do |post|%>
-        <li> <%= link_to post.title, post_path(post)%> 
-            <p><%=image_tag post.img%></p>
+    <div class= "grid">
+     <%= link_to post.title, post_path(post)%>
+    <img class="myimage"> <p><%=image_tag post.img%></p></img>
+    
              <%if current_user%>
             <p><%=form_for @favorite do |f|%>
                 <%=f.hidden_field :post_id, :value => post.id %>
@@ -14,10 +20,9 @@
                 <%=f.submit "Pin"%> 
                 </p>
             <%end%>
-            <%end %> 
-               
-        </li> 
+            </div>
+        
+         <%end %>  
     <%end%>
-</ul>
 
-
+</div>

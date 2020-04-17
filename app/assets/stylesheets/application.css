@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+ .jumbotron {
+    color: rgba(0 159 147 0.4);
+  }
+
+ .align{
+    text-align: center;
+ }
+
+ .grid {
+     display: inline-grid;
+     grid-gap: 50px;
+ }
+
+ .myimage{
+    max-width:100%;
+    max-height: 100%;
+    }
+
+.imgdiv{
+    height: 200px;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+}
+
+.some-page-wrapper {
+    margin: 15px;
+    background-color: pink;
+  }
+  
