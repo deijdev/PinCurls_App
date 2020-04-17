@@ -1,3 +1,4 @@
+  
 <div class= "align">
 
 <h1>All Posts</h1>
@@ -11,7 +12,7 @@
     <% @posts.each do |post|%>
     <div class= "grid">
      <%= link_to post.title, post_path(post)%>
-    <img class="myimage"> <p><%=image_tag post.img%></p></img>
+    <img class="myimage"> <%=image_tag post.img%></img>
     
              <%if current_user%>
             <p><%=form_for @favorite do |f|%>

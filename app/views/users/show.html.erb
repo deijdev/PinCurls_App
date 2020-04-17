@@ -33,7 +33,7 @@
       
         <% current_user.posts.each do |p| %>
        <%=link_to p.title, post_path(p)%> <br>
-            <%=image_tag p.img %>
+            <%=image_tag p.img %></br>
         
         <%end%>
     
